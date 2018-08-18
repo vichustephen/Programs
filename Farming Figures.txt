@@ -1,0 +1,38 @@
+#include<stdio.h>
+
+int main()
+{
+ int n,ae,sum=0,count;
+ scanf("%d",&n);
+ int arr[n];
+ count =n;
+ for(int i=0; i<n; i++)
+   {
+    scanf("%d",&arr[i]);
+   } 
+ for (int i = 0; i < n; ++i) 
+        {
+            for (int j = i + 1; j < n; ++j)
+            {
+                if (arr[i] > arr[j]) 
+                {
+                    ae =  arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = ae;
+                }
+            }
+        }
+ for(int i=0; i<n-1; i++)
+   {
+    sum += arr[i];
+   }
+  while(--n)
+   {
+      //printf("%d ",sum);
+     if(sum>arr[n])
+       break;
+     sum -= arr[n-1];
+     count--;
+   }
+  count>2 ? printf("%d",count):printf("0"); 
+}
