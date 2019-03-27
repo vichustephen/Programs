@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+  char c;
+  int l;
+  while(scanf("%c%d",&c,&l)>0)
+  {
+      while(l--)
+      {
+          printf("%c",c);
+      }
+  }
+  return 0;
+}

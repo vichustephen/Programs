@@ -1,0 +1,73 @@
+#include <stdio.h>
+#include <string.h>
+
+int l=2,n=12;
+
+void right(char arr[100][100],int i,int j,char* word) {
+    if(j+l>n)
+    return;
+    while(arr[i][j]==*word && *word !='\0')
+    {
+        j++;
+        word++;
+    }
+    if(*word == '\0')
+    printf("Found");
+}
+void left(char arr[100][100], int i, int j, char *word) {
+    if(j-l<0)
+    return;
+    while(arr[i][j]==*word && *word != '\0')
+    {
+        j--;
+        word++;
+    }
+    if (*word == '\0')
+      printf("Found");
+}
+void Down(char arr[100][100], int i, int j, char *word) {
+
+}
+void Up(char arr[100][100], int i, int j, char *word) {
+
+}
+void UpRight(char arr[100][100], int i, int j, char *word) {
+
+}
+void UpLeft(char arr[100][100], int i, int j, char *word) {
+
+}
+void DownRight(char arr[100][100], int i, int j, char *word) {
+
+}
+void DownLeft(char arr[100][100], int i, int j, char *word) {
+
+}
+void search(char arr[100][100], int i, int j, char *word) {
+    right(arr,i,j,word);
+    left(arr,i,j,word);
+    Down(arr, i, j, word);
+    Up(arr, i, j, word);
+    UpRight(arr,i,j,word);
+    UpLeft(arr, i, j, word);
+    DownRight(arr, i, j, word);
+    DownLeft(arr,i,j,word);
+}
+
+int main() {
+  char grid[100][100] = {"GEEKSFORGEEKS",
+                         "GEEKSQUIZGEEK", 
+                         "IDEQAPRACTICE"};
+    char word[10] = "ZZZ";
+    for(int a=0;a<n;a++)
+    {
+        for(int b=0;b<n;b++)
+        {
+            if(grid[a][b]==word[0])
+            search(grid,a,b,word);
+        }
+    }
+  //  left(grid,2,3,word);
+
+  return 0;
+}

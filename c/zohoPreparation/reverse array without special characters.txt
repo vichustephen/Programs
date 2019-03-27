@@ -1,0 +1,30 @@
+#include <assert.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+   char str[200],t;
+   int n;
+   scanf("%s%n",str,&n);
+   int i=0,j=n-1;
+   while(i<j)
+   {
+     while(!(str[i] >= 65 && str[i] <= 90) && !(str[i] >= 97 && str[i] <= 122))
+         i++;
+
+     while (!(str[j] >= 65 && str[j] <= 90) && !(str[j] >= 97 && str[j] <= 122))
+         j--;
+         
+     t = str[i];
+     str[i] = str[j];
+     str[j] = t;
+     i++;
+     j--;
+   } 
+   printf("%s",str);
+}

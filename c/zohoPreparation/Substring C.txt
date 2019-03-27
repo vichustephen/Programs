@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int substring(char* str1 , char* str2,int i)
+{
+    str1 += i;
+    while ((*str1 != '\0' && *str2 != '\0') && *str1 == *str2)
+      {
+          str1++;
+          str2++;
+          if(*str2=='\0')
+          return 1;
+      }
+      return 0;
+}
+int main() {
+    char s[100],t[100];
+    int n,i=0,n2,j=0,flag;
+    scanf("%s%n%s%n",s,&n,t,&n2);
+    n2 -= n+1;
+   while(s[i])
+   {
+       if(s[i]==t[0])
+       {
+           flag=substring(s,t,i);
+           if(flag)
+           {
+               printf("YES");
+               return 0;
+           }
+       }
+       i++;
+   }
+   printf("NO");
+ 
+  return 0;
+}

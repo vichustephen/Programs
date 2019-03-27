@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <string.h>
+
+void reverse()
+{
+    char s[100];
+    if(scanf("%s",s)>0)
+    {
+        reverse();
+        printf("%s ",s);
+    }
+    else
+      return;
+  
+}
+int main() {
+  reverse();
+  return 0;
+}
